@@ -15,6 +15,12 @@
   <wsdl:message name="Air_FlightInfoReply_7_1">
     <wsdl:part name="Air_FlightInfoReply_7_1" element="air_flightinforeply_7_1:Air_FlightInfoReply"/>
   </wsdl:message>
+  <wsdl:message name="Air_MultiAvailability_13_1">
+    <wsdl:part name="Air_MultiAvailability_13_1" element="air_multiavailability_13_1:Air_MultiAvailability"/>
+  </wsdl:message>
+  <wsdl:message name="Air_MultiAvailabilityReply_13_1">
+    <wsdl:part name="Air_MultiAvailabilityReply_13_1" element="air_multiavailabilityreply_13_1:Air_MultiAvailabilityReply"/>
+  </wsdl:message>
   <wsdl:message name="ProcessingFlow" xmlns="http://PIP_Service_Library/PIP_Processing">
     <wsdl:part name="ProcessingFlow" element="pip:ProcessingFlow"/>
   </wsdl:message>
