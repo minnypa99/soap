@@ -59,6 +59,7 @@
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="PAP1AWKLS01Services">
     <wsdl:port name="PAP1AWKLS01_AIRPort" binding="pipa:PAP1AWKLS01Binding">
       <soap:address location="http://PIPESB:9080/PSPSOAPHPSRBY02/sca/V1_01"/>
