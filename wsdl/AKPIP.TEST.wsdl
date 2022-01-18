@@ -7,6 +7,8 @@
       <xsd:import namespace="http://xml.amadeus.com/FLIRES_07_1_1A" schemaLocation="./Air_FlightInfoReply_07_1_1A.xsd"/>
       <xsd:import namespace="http://PIP_Service_Library/PIP_Processing" schemaLocation="./ProcessingFlow-1.1.xsd"/>
       <xsd:import namespace="http://PIP_Service_Library/PIP_Session" schemaLocation="./Session-1.0.xsd"/>
+      <xsd:import namespace="http://xml.amadeus.com/SATRQT_13_1_1A" schemaLocation="./Air_MultiAvailability_13_1_1A.xsd"/>
+      <xsd:import namespace="http://xml.amadeus.com/SATRSP_13_1_1A" schemaLocation="./Air_MultiAvailabilityReply_13_1_1A.xsd"/>
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="Air_FlightInfo_7_1">
