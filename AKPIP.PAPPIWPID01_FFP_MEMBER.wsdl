@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pip="http://PIP_Service_Library/PIP_Processing" xmlns:pipa="http://skypass.koreanair.co.kr/Member" xmlns:pipe="http://PIP_Service_Library/PIP_Error" xmlns:pips="http://PIP_Service_Library/PIP_Session" xmlns:siebelfault="http://www.siebel.com/ws/fault" xmlns:siebelwsse="http://schemas.xmlsoap.org/ws/2002/07/secext" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ws="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsdLocal11="http://skypass.koreanair.co.kr/SearchList_Member" xmlns:xsdLocal13="http://skypass.koreanair.co.kr/SearchList_ProfileHistory" xmlns:xsdLocal15="http://skypass.koreanair.co.kr/Search_MemberLevel" xmlns:xsdLocal17="http://skypass.koreanair.co.kr/SearchList_CardIssueHistory" xmlns:xsdLocal19="http://skypass.koreanair.co.kr/Create_MemberRemarks" xmlns:xsdLocal2="http://skypass.koreanair.co.kr/CreateUpdate_CardReissue" xmlns:xsdLocal21="http://skypass.koreanair.co.kr/Search_MemberInfo" xmlns:xsdLocal23="http://skypass.koreanair.co.kr/CreateUpdateList_FamilyPlan" xmlns:xsdLocal25="http://skypass.koreanair.co.kr/SearchList_MemberRemarks" xmlns:xsdLocal27="http://skypass.koreanair.co.kr/Create_MemberVOC" xmlns:xsdLocal31="http://skypass.koreanair.co.kr/SearchList_CardStatusHistory" xmlns:xsdLocal32="http://skypass.koreanair.co.kr/CreateUpdate_Membership" xmlns:xsdLocal33="http://skypass.koreanair.co.kr/Update_MemberQuit" xmlns:xsdLocal34="http://skypass.koreanair.co.kr/Search_MemberInfoLight" xmlns:xsdLocal36="http://skypass.koreanair.co.kr/Search_MemberInfoMM" xmlns:xsdLocal37="http://skypass.koreanair.co.kr/SearchList_FamilyInfoLight" xmlns:xsdLocal38="http://skypass.koreanair.co.kr/CreateUpdate_Pet" xmlns:xsdLocal39="http://skypass.koreanair.co.kr/SearchList_Pet" xmlns:xsdLocal44="http://skypass.koreanair.co.kr/CreateUpdate_MobileCardIssue" xmlns:xsdLocal45="http://skypass.koreanair.co.kr/SearchList_MemberSimple" xmlns:xsdLocal46="http://skypass.koreanair.co.kr/Update_CINumber" xmlns:xsdLocal47="http://skypass.koreanair.co.kr/SearchList_MemberJobTitle" xmlns:xsdLocal48="http://skypass.koreanair.co.kr/Update_MemberInfoLight" xmlns:xsdLocal5="http://skypass.koreanair.co.kr/Update_MemberInfo" xmlns:xsdLocal7="http://skypass.koreanair.co.kr/CreateUpdateList_FamilyRegistration" xmlns:xsdLocal9="http://skypass.koreanair.co.kr/SearchList_FamilyInfoDetail" targetNamespace="http://skypass.koreanair.co.kr/Member">
+	<wsdl:types>
+			<xsd:schema targetNamespace="http://skypass.koreanair.co.kr/Member">
+						<xsd:import namespace="http://skypass.koreanair.co.kr/SearchList_MemberRemarks" schemaLocation="SearchList_MemberRemarks_1_0_Response.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/SearchList_MemberRemarks" schemaLocation="SearchList_MemberRemarks_1_0_Request.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/CreateUpdateList_FamilyPlan" schemaLocation="CreateUpdateList_FamilyPlan_1_0_Response.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/CreateUpdateList_FamilyPlan" schemaLocation="CreateUpdateList_FamilyPlan_1_0_Request.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/Search_MemberInfo" schemaLocation="Search_MemberInfo_1_0_Response.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/Search_MemberInfo" schemaLocation="Search_MemberInfo_1_0_Request.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/Create_MemberRemarks" schemaLocation="Create_MemberRemarks_1_0_Response.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/Create_MemberRemarks" schemaLocation="Create_MemberRemarks_1_0_Request.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/SearchList_CardIssueHistory" schemaLocation="SearchList_CardIssueHistory_1_0_Response.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/SearchList_CardIssueHistory" schemaLocation="SearchList_CardIssueHistory_1_0_Request.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/Search_MemberLevel" schemaLocation="Search_MemberLevel_1_0_Response.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/Search_MemberLevel" schemaLocation="Search_MemberLevel_1_0_Request.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/SearchList_ProfileHistory" schemaLocation="SearchList_ProfileHistory_1_0_Response.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/SearchList_ProfileHistory" schemaLocation="SearchList_ProfileHistory_1_0_Request.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/SearchList_Member" schemaLocation="SearchList_Member_1_0_Response.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/SearchList_Member" schemaLocation="SearchList_Member_1_0_Request.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/SearchList_FamilyInfoDetail" schemaLocation="SearchList_FamilyInfoDetail_1_0_Response.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/SearchList_FamilyInfoDetail" schemaLocation="SearchList_FamilyInfoDetail_1_0_Request.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/CreateUpdateList_FamilyRegistration" schemaLocation="CreateUpdateList_FamilyRegistration_1_0_Response.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/CreateUpdateList_FamilyRegistration" schemaLocation="CreateUpdateList_FamilyRegistration_1_0_Request.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/Update_MemberInfo" schemaLocation="Update_MemberInfo_1_0_Response.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/Update_MemberInfo" schemaLocation="Update_MemberInfo_1_0_Request.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/CreateUpdate_CardReissue" schemaLocation="CreateUpdate_CardReissue_1_0_Response.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/CreateUpdate_CardReissue" schemaLocation="CreateUpdate_CardReissue_1_0_Request.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/Create_MemberVOC" schemaLocation="Create_MemberVOC_1_0_Response.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/Create_MemberVOC" schemaLocation="Create_MemberVOC_1_0_Request.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/SearchList_CardStatusHistory" schemaLocation="SearchList_CardStatusHistory_1_0_Response.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/SearchList_CardStatusHistory" schemaLocation="SearchList_CardStatusHistory_1_0_Request.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/CreateUpdate_Membership" schemaLocation="CreateUpdate_Membership_1_0_Response.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/CreateUpdate_Membership" schemaLocation="CreateUpdate_Membership_1_0_Request.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/Update_MemberQuit" schemaLocation="Update_MemberQuit_1_0_Response.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/Update_MemberQuit" schemaLocation="Update_MemberQuit_1_0_Request.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/Search_MemberInfoLight" schemaLocation="Search_MemberInfoLight_1_0_Response.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/Search_MemberInfoLight" schemaLocation="Search_MemberInfoLight_1_0_Request.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/Search_MemberInfoMM" schemaLocation="Search_MemberInfoMM_1_0_Response.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/Search_MemberInfoMM" schemaLocation="Search_MemberInfoMM_1_0_Request.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/SearchList_FamilyInfoLight" schemaLocation="SearchList_FamilyInfoLight_1_0_Response.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/SearchList_FamilyInfoLight" schemaLocation="SearchList_FamilyInfoLight_1_0_Request.xsd"/>					
+						<xsd:import namespace="http://skypass.koreanair.co.kr/CreateUpdate_Pet" schemaLocation="CreateUpdate_Pet_1_0_Response.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/CreateUpdate_Pet" schemaLocation="CreateUpdate_Pet_1_0_Request.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/SearchList_Pet" schemaLocation="SearchList_Pet_1_0_Response.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/SearchList_Pet" schemaLocation="SearchList_Pet_1_0_Request.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/CreateUpdate_MobileCardIssue" schemaLocation="CreateUpdate_MobileCardIssue_1_0_Response.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/CreateUpdate_MobileCardIssue" schemaLocation="CreateUpdate_MobileCardIssue_1_0_Request.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/SearchList_MemberSimple" schemaLocation="SearchList_MemberSimple_1_0_Request.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/SearchList_MemberSimple" schemaLocation="SearchList_MemberSimple_1_0_Response.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/Update_CINumber" schemaLocation="Update_CINumber_1_0_Request.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/Update_CINumber" schemaLocation="Update_CINumber_1_0_Response.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/SearchList_MemberJobTitle" schemaLocation="SearchList_MemberJobTitle_1_0_Request.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/SearchList_MemberJobTitle" schemaLocation="SearchList_MemberJobTitle_1_0_Response.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/Update_MemberInfoLight" schemaLocation="Update_MemberInfoLight_1_0_Request.xsd"/>
+						<xsd:import namespace="http://skypass.koreanair.co.kr/Update_MemberInfoLight" schemaLocation="Update_MemberInfoLight_1_0_Response.xsd"/>
+						
+
+            <xsd:import namespace="http://PIP_Service_Library/PIP_Processing" schemaLocation="ProcessingFlow-1.1.xsd"/>
+            <xsd:import namespace="http://PIP_Service_Library/PIP_Session" schemaLocation="Session-1.0.xsd"/>
+	    </xsd:schema>
+ 	</wsdl:types>
+ 	
+ 	
+    <wsdl:message name="CreateUpdate_CardReissue_1_0_Input">
+        <wsdl:part element="xsdLocal2:CreateUpdate_CardReissue_1_0_Input" name="CreateUpdate_CardReissue_1_0_Input"/>
+    </wsdl:message>
+    <wsdl:message name="CreateUpdate_CardReissue_1_0_Output">
+        <wsdl:part element="xsdLocal2:CreateUpdate_CardReissue_1_0_Output" name="CreateUpdate_CardReissue_1_0_Output"/>
+    </wsdl:message>
+    <wsdl:message name="Update_MemberInfo_1_0_Input">
+        <wsdl:part element="xsdLocal5:Update_MemberInfo_1_0_Input" name="Update_MemberInfo_1_0_Input"/>
+    </wsdl:message>
+    <wsdl:message name="Update_MemberInfo_1_0_Output">
+        <wsdl:part element="xsdLocal5:Update_MemberInfo_1_0_Output" name="Update_MemberInfo_1_0_Output"/>
+    </wsdl:message>
+    <wsdl:message name="CreateUpdateList_FamilyRegistration_1_0_Input">
+        <wsdl:part element="xsdLocal7:CreateUpdateList_FamilyRegistration_1_0_Input" name="CreateUpdateList_FamilyRegistration_1_0_Input"/>
+    </wsdl:message>
+    <wsdl:message name="CreateUpdateList_FamilyRegistration_1_0_Output">
+        <wsdl:part element="xsdLocal7:CreateUpdateList_FamilyRegistration_1_0_Output" name="CreateUpdateList_FamilyRegistration_1_0_Output"/>
+    </wsdl:message>
+    <wsdl:message name="SearchList_FamilyInfoDetail_1_0_Input">
+        <wsdl:part element="xsdLocal9:SearchList_FamilyInfoDetail_1_0_Input" name="SearchList_FamilyInfoDetail_1_0_Input"/>
+    </wsdl:message>
+    <wsdl:message name="SearchList_FamilyInfoDetail_1_0_Output">
+        <wsdl:part element="xsdLocal9:SearchList_FamilyInfoDetail_1_0_Output" name="SearchList_FamilyInfoDetail_1_0_Output"/>
+    </wsdl:message>
+    <wsdl:message name="SearchList_Member_1_0_Input">
+        <wsdl:part element="xsdLocal11:SearchList_Member_1_0_Input" name="SearchList_Member_1_0_Input"/>
+    </wsdl:message>
+    <wsdl:message name="SearchList_Member_1_0_Output">
+        <wsdl:part element="xsdLocal11:SearchList_Member_1_0_Output" name="SearchList_Member_1_0_Output"/>
+    </wsdl:message>
+    <wsdl:message name="SearchList_ProfileHistory_1_0_Input">
+        <wsdl:part element="xsdLocal13:SearchList_ProfileHistory_1_0_Input" name="SearchList_ProfileHistory_1_0_Input"/>
+    </wsdl:message>
+    <wsdl:message name="SearchList_ProfileHistory_1_0_Output">
+        <wsdl:part element="xsdLocal13:SearchList_ProfileHistory_1_0_Output" name="SearchList_ProfileHistory_1_0_Output"/>
+    </wsdl:message>
+    <wsdl:message name="Search_MemberLevel_1_0_Input">
+        <wsdl:part element="xsdLocal15:Search_MemberLevel_1_0_Input" name="Search_MemberLevel_1_0_Input"/>
+    </wsdl:message>
+    <wsdl:message name="Search_MemberLevel_1_0_Output">
+        <wsdl:part element="xsdLocal15:Search_MemberLevel_1_0_Output" name="Search_MemberLevel_1_0_Output"/>
+    </wsdl:message>
+    <wsdl:message name="SearchList_CardIssueHistory_1_0_Input">
+        <wsdl:part element="xsdLocal17:SearchList_CardIssueHistory_1_0_Input" name="SearchList_CardIssueHistory_1_0_Input"/>
+    </wsdl:message>
+    <wsdl:message name="SearchList_CardIssueHistory_1_0_Output">
+        <wsdl:part element="xsdLocal17:SearchList_CardIssueHistory_1_0_Output" name="SearchList_CardIssueHistory_1_0_Output"/>
+    </wsdl:message>
+    <wsdl:message name="Create_MemberRemarks_1_0_Input">
+        <wsdl:part element="xsdLocal19:Create_MemberRemarks_1_0_Input" name="Create_MemberRemarks_1_0_Input"/>
+    </wsdl:message>
+    <wsdl:message name="Create_MemberRemarks_1_0_Output">
+        <wsdl:part element="xsdLocal19:Create_MemberRemarks_1_0_Output" name="Create_MemberRemarks_1_0_Output"/>
+    </wsdl:message>
+    <wsdl:message name="Search_MemberInfo_1_0_Input">
+        <wsdl:part element="xsdLocal21:Search_MemberInfo_1_0_Input" name="Search_MemberInfo_1_0_Input"/>
+    </wsdl:message>
+    <wsdl:message name="Search_MemberInfo_1_0_Output">
+        <wsdl:part element="xsdLocal21:Search_MemberInfo_1_0_Output" name="Search_MemberInfo_1_0_Output"/>
+    </wsdl:message>
+    <wsdl:message name="CreateUpdateList_FamilyPlan_1_0_Input">
+        <wsdl:part element="xsdLocal23:CreateUpdateList_FamilyPlan_1_0_Input" name="CreateUpdateList_FamilyPlan_1_0_Input"/>
+    </wsdl:message>
+    <wsdl:message name="CreateUpdateList_FamilyPlan_1_0_Output">
+        <wsdl:part element="xsdLocal23:CreateUpdateList_FamilyPlan_1_0_Output" name="CreateUpdateList_FamilyPlan_1_0_Output"/>
+    </wsdl:message>
+    <wsdl:message name="SearchList_MemberRemarks_1_0_Input">
+        <wsdl:part element="xsdLocal25:SearchList_MemberRemarks_1_0_Input" name="SearchList_MemberRemarks_1_0_Input"/>
+    </wsdl:message>
+    <wsdl:message name="SearchList_MemberRemarks_1_0_Output">
+        <wsdl:part element="xsdLocal25:SearchList_MemberRemarks_1_0_Output" name="SearchList_MemberRemarks_1_0_Output"/>
+    </wsdl:message>
+    <wsdl:message name="Create_MemberVOC_1_0_Input">
+        <wsdl:part element="xsdLocal27:Create_MemberVOC_1_0_Input" name="Create_MemberVOC_1_0_Input"/>
+    </wsdl:message>
+    <wsdl:message name="Create_MemberVOC_1_0_Output">
+        <wsdl:part element="xsdLocal27:Create_MemberVOC_1_0_Output" name="Create_MemberVOC_1_0_Output"/>
+    </wsdl:message>
+		<wsdl:message name="SearchList_CardStatusHistory_1_0_Input">
+				<wsdl:part element="xsdLocal31:SearchList_CardStatusHistory_1_0_Input" name="SearchList_CardStatusHistory_1_0_Input"/>
+		</wsdl:message>
+		<wsdl:message name="SearchList_CardStatusHistory_1_0_Output">
+				<wsdl:part element="xsdLocal31:SearchList_CardStatusHistory_1_0_Output" name="SearchList_CardStatusHistory_1_0_Output"/>
+		</wsdl:message>
+		<wsdl:message name="CreateUpdate_Membership_1_0_Input">
+				<wsdl:part element="xsdLocal32:CreateUpdate_Membership_1_0_Input" name="CreateUpdate_Membership_1_0_Input"/>
+		</wsdl:message>
+		<wsdl:message name="CreateUpdate_Membership_1_0_Output">
+				<wsdl:part element="xsdLocal32:CreateUpdate_Membership_1_0_Output" name="CreateUpdate_Membership_1_0_Output"/>
+		</wsdl:message>
+		<wsdl:message name="Update_MemberQuit_1_0_Input">
+				<wsdl:part element="xsdLocal33:Update_MemberQuit_1_0_Input" name="Update_MemberQuit_1_0_Input"/>
+		</wsdl:message>
+		<wsdl:message name="Update_MemberQuit_1_0_Output">
+				<wsdl:part element="xsdLocal33:Update_MemberQuit_1_0_Output" name="Update_MemberQuit_1_0_Output"/>
+		</wsdl:message>
+		<wsdl:message name="Search_MemberInfoLight_1_0_Input">
+				<wsdl:part element="xsdLocal34:Search_MemberInfoLight_1_0_Input" name="Search_MemberInfoLight_1_0_Input"/>
+		</wsdl:message>
+		<wsdl:message name="Search_MemberInfoLight_1_0_Output">
+				<wsdl:part element="xsdLocal34:Search_MemberInfoLight_1_0_Output" name="Search_MemberInfoLight_1_0_Output"/>
+		</wsdl:message>
+		<wsdl:message name="Search_MemberInfoMM_1_0_Input">
+				<wsdl:part element="xsdLocal36:Search_MemberInfoMM_1_0_Input" name="Search_MemberInfoMM_1_0_Input"/>
+		</wsdl:message>
+		<wsdl:message name="Search_MemberInfoMM_1_0_Output">
+				<wsdl:part element="xsdLocal36:Search_MemberInfoMM_1_0_Output" name="Search_MemberInfoMM_1_0_Output"/>
+		</wsdl:message>
+		<wsdl:message name="SearchList_FamilyInfoLight_1_0_Input">
+				<wsdl:part element="xsdLocal37:SearchList_FamilyInfoLight_1_0_Input" name="SearchList_FamilyInfoLight_1_0_Input"/>
+		</wsdl:message>
+		<wsdl:message name="SearchList_FamilyInfoLight_1_0_Output">
+				<wsdl:part element="xsdLocal37:SearchList_FamilyInfoLight_1_0_Output" name="SearchList_FamilyInfoLight_1_0_Output"/>
+		</wsdl:message>
+		
+		<wsdl:message name="CreateUpdate_Pet_1_0_Input">
+				<wsdl:part element="xsdLocal38:CreateUpdate_Pet_1_0_Input" name="CreateUpdate_Pet_1_0_Input"/>
+		</wsdl:message>
+		<wsdl:message name="CreateUpdate_Pet_1_0_Output">
+				<wsdl:part element="xsdLocal38:CreateUpdate_Pet_1_0_Output" name="CreateUpdate_Pet_1_0_Output"/>
+		</wsdl:message>
+		<wsdl:message name="SearchList_Pet_1_0_Input">
+				<wsdl:part element="xsdLocal39:SearchList_Pet_1_0_Input" name="SearchList_Pet_1_0_Input"/>
+		</wsdl:message>
+		<wsdl:message name="SearchList_Pet_1_0_Output">
+				<wsdl:part element="xsdLocal39:SearchList_Pet_1_0_Output" name="SearchList_Pet_1_0_Output"/>
+		</wsdl:message>
+		<wsdl:message name="CreateUpdate_MobileCardIssue_1_0_Input">
+				<wsdl:part element="xsdLocal44:CreateUpdate_MobileCardIssue_1_0_Input" name="CreateUpdate_MobileCardIssue_1_0_Input"/>
+		</wsdl:message>
+		<wsdl:message name="CreateUpdate_MobileCardIssue_1_0_Output">
+				<wsdl:part element="xsdLocal44:CreateUpdate_MobileCardIssue_1_0_Output" name="CreateUpdate_MobileCardIssue_1_0_Output"/>
+		</wsdl:message>
+		<wsdl:message name="SearchList_MemberSimple_1_0_Input">
+				<wsdl:part element="xsdLocal45:SearchList_MemberSimple_1_0_Input" name="SearchList_MemberSimple_1_0_Input"/>
+		</wsdl:message>
+		<wsdl:message name="SearchList_MemberSimple_1_0_Output">
+				<wsdl:part element="xsdLocal45:SearchList_MemberSimple_1_0_Output" name="SearchList_MemberSimple_1_0_Output"/>
+		</wsdl:message>
+		<wsdl:message name="Update_CINumber_1_0_Input">
+				<wsdl:part element="xsdLocal46:Update_CINumber_1_0_Input" name="Update_CINumber_1_0_Input"/>
+		</wsdl:message>
+		<wsdl:message name="Update_CINumber_1_0_Output">
+				<wsdl:part element="xsdLocal46:Update_CINumber_1_0_Output" name="Update_CINumber_1_0_Output"/>
+		</wsdl:message>
+		<wsdl:message name="SearchList_MemberJobTitle_1_0_Input">
+				<wsdl:part element="xsdLocal47:SearchList_MemberJobTitle_1_0_Input" name="SearchList_MemberJobTitle_1_0_Input"/>
+		</wsdl:message>
+		<wsdl:message name="SearchList_MemberJobTitle_1_0_Output">
+				<wsdl:part element="xsdLocal47:SearchList_MemberJobTitle_1_0_Output" name="SearchList_MemberJobTitle_1_0_Output"/>
+		</wsdl:message>
+		<wsdl:message name="Update_MemberInfoLight_1_0_Input">
+				<wsdl:part element="xsdLocal48:Update_MemberInfoLight_1_0_Input" name="Update_MemberInfoLight_1_0_Input"/>
+		</wsdl:message>
+		<wsdl:message name="Update_MemberInfoLight_1_0_Output">
+				<wsdl:part element="xsdLocal48:Update_MemberInfoLight_1_0_Output" name="Update_MemberInfoLight_1_0_Output"/>
+		</wsdl:message>
+		
+    <wsdl:message xmlns="http://PIP_Service_Library/PIP_Processing" name="ProcessingFlow">
+        <wsdl:part element="pip:ProcessingFlow" name="ProcessingFlow"/>
+    </wsdl:message>
+    <wsdl:message xmlns="http://PIP_Service_Library/PIP_Session" name="Session">
+        <wsdl:part element="pips:Session" name="Session"/>
+    </wsdl:message>
+  
+      <wsdl:portType name="PAPPIWPID01PT">
+        <wsdl:operation name="CreateUpdate_CardReissue_1_0">
+            <wsdl:input message="pipa:CreateUpdate_CardReissue_1_0_Input"/>
+            <wsdl:output message="pipa:CreateUpdate_CardReissue_1_0_Output"/>
+        </wsdl:operation>
+        <wsdl:operation name="Update_MemberInfo_1_0">
+            <wsdl:input message="pipa:Update_MemberInfo_1_0_Input"/>
+            <wsdl:output message="pipa:Update_MemberInfo_1_0_Output"/>
+        </wsdl:operation>
+        <wsdl:operation name="CreateUpdateList_FamilyRegistration_1_0">
+            <wsdl:input message="pipa:CreateUpdateList_FamilyRegistration_1_0_Input"/>
+            <wsdl:output message="pipa:CreateUpdateList_FamilyRegistration_1_0_Output"/>
+        </wsdl:operation>
+        <wsdl:operation name="SearchList_FamilyInfoDetail_1_0">
+            <wsdl:input message="pipa:SearchList_FamilyInfoDetail_1_0_Input"/>
+            <wsdl:output message="pipa:SearchList_FamilyInfoDetail_1_0_Output"/>
+        </wsdl:operation>
+        <wsdl:operation name="SearchList_Member_1_0">
+            <wsdl:input message="pipa:SearchList_Member_1_0_Input"/>
+            <wsdl:output message="pipa:SearchList_Member_1_0_Output"/>
+        </wsdl:operation>
+        <wsdl:operation name="SearchList_ProfileHistory_1_0">
+            <wsdl:input message="pipa:SearchList_ProfileHistory_1_0_Input"/>
+            <wsdl:output message="pipa:SearchList_ProfileHistory_1_0_Output"/>
+        </wsdl:operation>
+        <wsdl:operation name="Search_MemberLevel_1_0">
+            <wsdl:input message="pipa:Search_MemberLevel_1_0_Input"/>
+            <wsdl:output message="pipa:Search_MemberLevel_1_0_Output"/>
+        </wsdl:operation>
+        <wsdl:operation name="SearchList_CardIssueHistory_1_0">
+            <wsdl:input message="pipa:SearchList_CardIssueHistory_1_0_Input"/>
+            <wsdl:output message="pipa:SearchList_CardIssueHistory_1_0_Output"/>
+        </wsdl:operation>
+        <wsdl:operation name="Create_MemberRemarks_1_0">
+            <wsdl:input message="pipa:Create_MemberRemarks_1_0_Input"/>
+            <wsdl:output message="pipa:Create_MemberRemarks_1_0_Output"/>
+        </wsdl:operation>
+        <wsdl:operation name="Search_MemberInfo_1_0">
+            <wsdl:input message="pipa:Search_MemberInfo_1_0_Input"/>
+            <wsdl:output message="pipa:Search_MemberInfo_1_0_Output"/>
+        </wsdl:operation>
+        <wsdl:operation name="CreateUpdateList_FamilyPlan_1_0">
+            <wsdl:input message="pipa:CreateUpdateList_FamilyPlan_1_0_Input"/>
+            <wsdl:output message="pipa:CreateUpdateList_FamilyPlan_1_0_Output"/>
+        </wsdl:operation>
+        <wsdl:operation name="SearchList_MemberRemarks_1_0">
+            <wsdl:input message="pipa:SearchList_MemberRemarks_1_0_Input"/>
+            <wsdl:output message="pipa:SearchList_MemberRemarks_1_0_Output"/>
+        </wsdl:operation>
+        <wsdl:operation name="Create_MemberVOC_1_0">
+            <wsdl:input message="pipa:Create_MemberVOC_1_0_Input"/>
+            <wsdl:output message="pipa:Create_MemberVOC_1_0_Output"/>
+        </wsdl:operation>
+        <wsdl:operation name="SearchList_CardStatusHistory_1_0">
+            <wsdl:input message="pipa:SearchList_CardStatusHistory_1_0_Input"/>
+            <wsdl:output message="pipa:SearchList_CardStatusHistory_1_0_Output"/>
+        </wsdl:operation>        
+		<wsdl:operation name="CreateUpdate_Membership_1_0">
+			<wsdl:input message="pipa:CreateUpdate_Membership_1_0_Input"/>
+			<wsdl:output message="pipa:CreateUpdate_Membership_1_0_Output"/>
+		</wsdl:operation>
+		<wsdl:operation name="Update_MemberQuit_1_0">
+			<wsdl:input message="pipa:Update_MemberQuit_1_0_Input"/>
+			<wsdl:output message="pipa:Update_MemberQuit_1_0_Output"/>
+		</wsdl:operation>
+		<wsdl:operation name="Search_MemberInfoLight_1_0">
+			<wsdl:input message="pipa:Search_MemberInfoLight_1_0_Input"/>
+			<wsdl:output message="pipa:Search_MemberInfoLight_1_0_Output"/>
+		</wsdl:operation>
+		<wsdl:operation name="Search_MemberInfoMM_1_0">
+			<wsdl:input message="pipa:Search_MemberInfoMM_1_0_Input"/>
+			<wsdl:output message="pipa:Search_MemberInfoMM_1_0_Output"/>
+		</wsdl:operation>
+		<wsdl:operation name="SearchList_FamilyInfoLight_1_0">
+			<wsdl:input message="pipa:SearchList_FamilyInfoLight_1_0_Input"/>
+			<wsdl:output message="pipa:SearchList_FamilyInfoLight_1_0_Output"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateUpdate_Pet_1_0">
+			<wsdl:input message="pipa:CreateUpdate_Pet_1_0_Input"/>
+			<wsdl:output message="pipa:CreateUpdate_Pet_1_0_Output"/>
+		</wsdl:operation>
+		<wsdl:operation name="SearchList_Pet_1_0">
+			<wsdl:input message="pipa:SearchList_Pet_1_0_Input"/>
+			<wsdl:output message="pipa:SearchList_Pet_1_0_Output"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateUpdate_MobileCardIssue_1_0">
+			<wsdl:input message="pipa:CreateUpdate_MobileCardIssue_1_0_Input"/>
+			<wsdl:output message="pipa:CreateUpdate_MobileCardIssue_1_0_Output"/>
+		</wsdl:operation>
+		<wsdl:operation name="SearchList_MemberSimple_1_0">
+			<wsdl:input message="pipa:SearchList_MemberSimple_1_0_Input"/>
+			<wsdl:output message="pipa:SearchList_MemberSimple_1_0_Output"/>
+		</wsdl:operation>
+		<wsdl:operation name="Update_CINumber_1_0">
+			<wsdl:input message="pipa:Update_CINumber_1_0_Input"/>
+			<wsdl:output message="pipa:Update_CINumber_1_0_Output"/>
+		</wsdl:operation>
+		<wsdl:operation name="SearchList_MemberJobTitle_1_0">
+			<wsdl:input message="pipa:SearchList_MemberJobTitle_1_0_Input"/>
+			<wsdl:output message="pipa:SearchList_MemberJobTitle_1_0_Output"/>
+		</wsdl:operation>
+		<wsdl:operation name="Update_MemberInfoLight_1_0">
+			<wsdl:input message="pipa:Update_MemberInfoLight_1_0_Input"/>
+			<wsdl:output message="pipa:Update_MemberInfoLight_1_0_Output"/>
+		</wsdl:operation>
+    </wsdl:portType>
+  	
+    <wsdl:binding name="PAPPIWPID01Binding" type="pipa:PAPPIWPID01PT">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="CreateUpdate_CardReissue_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/CreateUpdate_CardReissue_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="Update_MemberInfo_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/Update_MemberInfo_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CreateUpdateList_FamilyRegistration_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/CreateUpdateList_FamilyRegistration_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="SearchList_FamilyInfoDetail_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/SearchList_FamilyInfoDetail_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="SearchList_Member_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/SearchList_Member_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="SearchList_ProfileHistory_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/SearchList_ProfileHistory_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="Search_MemberLevel_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/Search_MemberLevel_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="SearchList_CardIssueHistory_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/SearchList_CardIssueHistory_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="Create_MemberRemarks_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/Create_MemberRemarks_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="Search_MemberInfo_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/Search_MemberInfo_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CreateUpdateList_FamilyPlan_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/CreateUpdateList_FamilyPlan_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="SearchList_MemberRemarks_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/SearchList_MemberRemarks_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="Create_MemberVOC_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/Create_MemberVOC_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="SearchList_CardStatusHistory_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/SearchList_CardStatusHistory_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>       
+        <wsdl:operation name="CreateUpdate_Membership_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/CreateUpdate_Membership_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="Update_MemberQuit_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/Update_MemberQuit_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="Search_MemberInfoLight_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/Search_MemberInfoLight_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="Search_MemberInfoMM_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/Search_MemberInfoMM_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="SearchList_FamilyInfoLight_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/SearchList_FamilyInfoLight_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+		
+		<wsdl:operation name="CreateUpdate_Pet_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/CreateUpdate_Pet_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+		<wsdl:operation name="SearchList_Pet_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/SearchList_Pet_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+		<wsdl:operation name="CreateUpdate_MobileCardIssue_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/CreateUpdate_MobileCardIssue_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+		<wsdl:operation name="SearchList_MemberSimple_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/SearchList_MemberSimple_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+		<wsdl:operation name="Update_CINumber_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/Update_CINumber_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+		<wsdl:operation name="SearchList_MemberJobTitle_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/SearchList_MemberJobTitle_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+		<wsdl:operation name="Update_MemberInfoLight_1_0">
+            <soap:operation soapAction="http://pip.koreanair.com/Update_MemberInfoLight_1_0"/>
+            <wsdl:input>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+    		    <soap:header message="pipa:ProcessingFlow" part="ProcessingFlow" use="literal"/>
+    		    <soap:header message="pipa:Session" part="Session" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+	</wsdl:binding>
+    
+  <wsdl:service name="PAPPIWPID01Services">
+    <wsdl:port binding="pipa:PAPPIWPID01Binding" name="PAPPIWPID01_FFPMEMPort">
+	    <soap:address location="https://20f54tpgu2.execute-api.ap-northeast-2.amazonaws.com/PIP/apigee/Search_MemberInfoLight_1_0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
